@@ -1,6 +1,6 @@
-# Cognitive Distortion Detector
+# Objective Language Detector
 
-This is a small FastAPI app that detects whether a statement **has a cognitive distortion** (binary yes/no).
+This is a small FastAPI app that detects whether a statement **is objective** (binary yes/no), optimized for statements that are **100% true in all cases**.
 
 ## Run it (copy/paste)
 
@@ -9,14 +9,14 @@ This is a small FastAPI app that detects whether a statement **has a cognitive d
 If you have git installed:
 
 ```bash
-git clone https://github.com/jacpagan/AllOrNothing.git
-cd AllOrNothing
+git clone https://github.com/jacpagan/objective-language-detector.git
+cd objective-language-detector
 ```
 
-If you downloaded a ZIP: unzip it, then `cd` into the unzipped folder (it will usually be named `AllOrNothing`).
+If you downloaded a ZIP: unzip it, then `cd` into the unzipped folder (it will usually be named `objective-language-detector`).
 
 ```bash
-cd AllOrNothing
+cd objective-language-detector
 ```
 
 ### 2) Create and activate a virtual environment
@@ -37,7 +37,7 @@ python -m pip install -r requirements.txt
 ### 4) Start the server
 
 ```bash
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+python -m uvicorn objective_language_detector.main:app --host 127.0.0.1 --port 8000
 ```
 
 Leave that running.
@@ -86,7 +86,7 @@ python -m pytest
 Either run on a different port:
 
 ```bash
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8001
+python -m uvicorn objective_language_detector.main:app --host 127.0.0.1 --port 8001
 ```
 
 Or find and stop whatever is using port 8000:

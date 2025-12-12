@@ -16,7 +16,7 @@ class DetectionResponse(BaseModel):
         return cls(has_cognitive_distortion=result.has_cognitive_distortion)
 
 
-app = FastAPI(title="Cognitive Distortion Detector", version="0.2.0")
+app = FastAPI(title="Objective Language Detector", version="0.3.0")
 
 
 @app.get("/health")

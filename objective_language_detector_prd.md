@@ -1,4 +1,4 @@
-# Cognitive Distortion Detector — Product Requirements Document (PRD)
+# Objective Language Detector — Product Requirements Document (PRD)
 Version: 2.0  
 Owner: Jose
 
@@ -18,7 +18,7 @@ People frequently write and speak in ways that reflect cognitive distortions (e.
 
 We need a small, reliable detector that answers one question:
 
-> Does this statement contain a cognitive distortion?
+> Is this statement **objective** (i.e., 100% true in all cases)?
 
 ---
 
@@ -29,19 +29,19 @@ We need a small, reliable detector that answers one question:
 ---
 
 ## 4. In-scope behavior
-- **Binary classification only**: `has_cognitive_distortion = true|false`
+- **Binary classification only**: `has_cognitive_distortion = true|false` (interpreted as “contains non-objective language signals”)
 - **Single input**: one string (`text`)
 - **Low latency** suitable for interactive use
 
-### 4.1 What counts as a “cognitive distortion” in this app (definition)
-For this application, we optimize for **objective truth claims**: language that is not guaranteed to be **100% true in all cases, every single time** is treated as a cognitive distortion signal.
+### 4.1 What counts as “non-objective language” in this app (definition)
+For this application, we optimize for **objective truth claims**: language that is not guaranteed to be **100% true in all cases, every single time** is treated as a distortion / non-objective language signal.
 
-As a result, **any use of “to be” / be-verbs** (e.g., “am/is/are/was/were/be/being/been”) is categorized as a cognitive distortion signal, because it commonly encodes absolute identity or permanence (E-prime rationale).
+As a result, **any use of “to be” / be-verbs** (e.g., “am/is/are/was/were/be/being/been”) is categorized as a distortion / non-objective language signal, because it commonly encodes absolute identity or permanence (E-prime rationale).
 
 ---
 
 ## 5. Out of scope (explicit)
-- Distortion type classification (e.g., “all-or-nothing”, “labeling”, etc.)
+- Distortion type classification (taxonomy/labels)
 - Severity scoring (numeric scales)
 - Verb tense/type analysis
 - Suggestions / rewrites / coaching
@@ -82,4 +82,4 @@ The API returns a JSON object:
 ---
 
 ## 9. Appendix
-- Software Requirements Document (SRD): [`all_or_nothing_classifier_srd.md`](all_or_nothing_classifier_srd.md)
+- Software Requirements Document (SRD): [`objective_language_detector_srd.md`](objective_language_detector_srd.md)

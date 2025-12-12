@@ -1,11 +1,11 @@
-# Cognitive Distortion Detector — Software Requirements Document (SRD)
+# Objective Language Detector — Software Requirements Document (SRD)
 Version: 2.0  
 Owner: Jose
 
 ## 1. Purpose
-Define the software requirements for a small service that performs **binary detection**:
+Define the software requirements for a small service that performs **binary detection** of objective language:
 
-- Given a single statement, return whether it **has** a cognitive distortion.
+- Given a single statement, return whether it **has non-objective language signals** (i.e., “not guaranteed 100% true in all cases”).
 
 The service must do **only this**.
 
@@ -41,7 +41,7 @@ The service must do **only this**.
 {"status":"ok"}
 ```
 
-### 5.2 Detect cognitive distortion
+### 5.2 Detect objective language
 - **Endpoint**: `POST /classify`
 - **Request body**:
 
@@ -59,7 +59,7 @@ The service must do **only this**.
 ```
 
 #### 5.2.1 Detection heuristic (deterministic)
-The service returns `has_cognitive_distortion=true` when any of the following are detected:
+The service returns `has_cognitive_distortion=true` when any of the following are detected (non-objective language signals):
 - **Be-verbs (“to be”) present** (e.g., `am/is/are/was/were/be/being/been`)
 - Absolutist language (e.g., “always/never/everything/nothing”)
 - Binary framing markers (e.g., “either/or”, “all or nothing”)

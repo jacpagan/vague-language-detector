@@ -6,7 +6,7 @@ from typing import List
 # contains a cognitive distortion (binary yes/no).
 
 # Minimal, deterministic signals (heuristics):
-# - Absolutist language (often all-or-nothing / overgeneralization)
+# - Absolutist language (often absolute / globalizing language)
 # - Binary framing markers
 # - Global identity-labeling statements ("I am a failure")
 
