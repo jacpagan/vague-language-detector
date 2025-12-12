@@ -79,6 +79,28 @@ source .venv/bin/activate
 python -m pytest
 ```
 
+## Stress test (load test)
+
+Start the server in one terminal:
+
+```bash
+source .venv/bin/activate
+python -m uvicorn objective_language_detector.main:app --host 127.0.0.1 --port 8000
+```
+
+Then, in a second terminal:
+
+```bash
+source .venv/bin/activate
+python scripts/stress_test.py --concurrency 50 --duration 15
+```
+
+More aggressive:
+
+```bash
+python scripts/stress_test.py --concurrency 200 --duration 30 --timeout 2
+```
+
 ## Troubleshooting
 
 ### “address already in use” (port 8000 is busy)
