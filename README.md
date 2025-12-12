@@ -1,6 +1,6 @@
-# All-or-Nothing Classifier
+# Cognitive Distortion Detector
 
-This is a small FastAPI app that detects **all-or-nothing thinking** (a cognitive distortion) in short text.
+This is a small FastAPI app that detects whether a statement **has a cognitive distortion** (binary yes/no).
 
 ## Run it (copy/paste)
 
@@ -70,7 +70,7 @@ curl -X POST http://127.0.0.1:8000/classify \
   -d '{"text":"I always mess everything up."}'
 ```
 
-You’ll get a JSON response including `distortion`, `objectivity_score`, `confidence`, and a short `rationale`.
+You’ll get a JSON response including `has_cognitive_distortion`.
 
 ## Run tests
 

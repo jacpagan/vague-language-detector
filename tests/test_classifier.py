@@ -1,22 +1,21 @@
-from app.classifier import classify
+from app.classifier import detect
 
 
-def test_detects_all_or_nothing_with_absolutes():
-    result = classify("I always mess everything up.")
-    assert result.distortion is True
-    assert result.distortion_type == "all-or-nothing"
-    assert result.objectivity_score < 70
-    assert result.subjectivity_score > 30
+def test_detects_distortion_with_absolutes():
+    result = detect("I always mess everything up.")
+    assert result.has_cognitive_distortion is True
 
 
 def test_handles_neutral_sentence():
-    result = classify("I am learning to code and I practice daily.")
-    assert result.distortion is False
-    assert 50 <= result.objectivity_score <= 100
-    assert result.verb_type["action"] >= 1
+    result = detect("I am learning to code and I practice daily.")
+    assert result.has_cognitive_distortion is False
 
 
-def test_past_tense_penalty():
-    result = classify("I was always failing before, but I changed.")
-    assert result.verb_tense == "past"
-    assert result.objectivity_score < 90
+def test_detects_distortion_with_identity_label():
+    result = detect("I am a failure.")
+    assert result.has_cognitive_distortion is True
+
+
+def test_detects_distortion_with_binary_framing():
+    result = detect("It is either a total success or a complete failure.")
+    assert result.has_cognitive_distortion is True
