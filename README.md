@@ -25,7 +25,7 @@ See [AWS Deployment Guide](aws-deployment.md) for deployment details.
 
 ## Projects
 
-### Vague Language Detector
+### Objective Language Detector (implemented in `vague_language_detector/`)
 
 A lightweight FastAPI service that performs binary detection of vague language patterns in statements. The detector identifies cognitive distortions by analyzing text for patterns that are not guaranteed to be 100% true in all cases.
 
@@ -71,10 +71,6 @@ curl -X POST https://hff2mpuk6i.execute-api.us-east-1.amazonaws.com/classify \
 - ✅ "I'm a total failure" → `true` (identity label with contraction)
 - ✅ "I am a complete failure" → `true` (identity label)
 - ❌ "This project failed yesterday." → `false` (neutral, factual statement)
-
-### Objective Language Detector
-
-*Coming soon* - A service for detecting objective vs. subjective language patterns.
 
 ## Quick Start
 
@@ -172,8 +168,6 @@ See [AWS Deployment Guide](aws-deployment.md) and [Security Documentation](SECUR
 - [Security Features](SECURITY.md) - Security implementation details
 - [Vague Language Detector PRD](vague_language_detector_prd.md) - Product Requirements Document
 - [Vague Language Detector SRD](vague_language_detector_srd.md) - Software Requirements Document
-- [Objective Language Detector PRD](objective_language_detector_prd.md) - Product Requirements Document
-- [Objective Language Detector SRD](objective_language_detector_srd.md) - Software Requirements Document
 
 ## Architecture
 
