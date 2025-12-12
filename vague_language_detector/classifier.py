@@ -105,7 +105,8 @@ def detect(text: str) -> DetectionResult:
 
     # v2.0 objective-function choice:
     # Treat any "to be" verb usage as a cognitive distortion signal.
-    has_be_verb = any(t in BE_VERBS for t in tokens)
+    be_tokens = BE_VERBS | CONTRACTED_SUBJECT_BE
+    has_be_verb = any(t in be_tokens for t in tokens)
 
     has_distortion = (
         has_be_verb

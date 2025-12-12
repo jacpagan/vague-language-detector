@@ -32,6 +32,12 @@ def test_detects_contracted_identity_label_youre():
     assert result.has_cognitive_distortion is True
 
 
+def test_contracted_be_verb_flags_distortion():
+    # Should trigger via be-verb contraction without relying on label list.
+    result = detect("I'm a mess.")
+    assert result.has_cognitive_distortion is True
+
+
 def test_detects_all_or_nothing_hyphenated():
     result = detect("It was an all-or-nothing bet.")
     assert result.has_cognitive_distortion is True
