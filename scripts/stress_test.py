@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Objective Language Detector stress test (stdlib-only).
+"""Vague Language Detector stress test (stdlib-only).
 
 Sends concurrent POST requests to /classify and reports:
 - requests/sec
@@ -177,7 +177,7 @@ def run(concurrency: int, duration_s: float, url: str, timeout_s: float, max_req
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Stress test Objective Language Detector /classify")
+    parser = argparse.ArgumentParser(description="Stress test Vague Language Detector /classify")
     parser.add_argument("--url", default="http://127.0.0.1:8000/classify", help="Full classify URL")
     parser.add_argument("--concurrency", type=int, default=50, help="Concurrent workers")
     parser.add_argument("--duration", type=float, default=15.0, help="Seconds to run (ignored if --requests is set)")

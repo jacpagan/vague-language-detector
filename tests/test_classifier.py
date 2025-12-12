@@ -1,4 +1,4 @@
-from objective_language_detector.classifier import detect
+from vague_language_detector.classifier import detect
 
 
 def test_detects_distortion_with_absolutes():

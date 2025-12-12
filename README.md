@@ -1,6 +1,6 @@
-# Objective Language Detector
+# Vague Language Detector
 
-This is a small FastAPI app that detects whether a statement **is objective** (binary yes/no), optimized for statements that are **100% true in all cases**.
+This is a small FastAPI app that detects whether a statement **is vague** (binary yes/no), optimized for statements that are **100% true in all cases**.
 
 ## Run it (copy/paste)
 
@@ -9,14 +9,14 @@ This is a small FastAPI app that detects whether a statement **is objective** (b
 If you have git installed:
 
 ```bash
-git clone https://github.com/jacpagan/objective-language-detector.git
-cd objective-language-detector
+git clone https://github.com/jacpagan/vague-language-detector.git
+cd vague-language-detector
 ```
 
-If you downloaded a ZIP: unzip it, then `cd` into the unzipped folder (it will usually be named `objective-language-detector`).
+If you downloaded a ZIP: unzip it, then `cd` into the unzipped folder (it will usually be named `vague-language-detector`).
 
 ```bash
-cd objective-language-detector
+cd vague-language-detector
 ```
 
 ### 2) Create and activate a virtual environment
@@ -37,7 +37,7 @@ python -m pip install -r requirements.txt
 ### 4) Start the server
 
 ```bash
-python -m uvicorn objective_language_detector.main:app --host 127.0.0.1 --port 8000
+python -m uvicorn vague_language_detector.main:app --host 127.0.0.1 --port 8000
 ```
 
 Leave that running.
@@ -85,7 +85,7 @@ Start the server in one terminal:
 
 ```bash
 source .venv/bin/activate
-python -m uvicorn objective_language_detector.main:app --host 127.0.0.1 --port 8000
+python -m uvicorn vague_language_detector.main:app --host 127.0.0.1 --port 8000
 ```
 
 Then, in a second terminal:
@@ -108,7 +108,7 @@ python scripts/stress_test.py --concurrency 200 --duration 30 --timeout 2
 Either run on a different port:
 
 ```bash
-python -m uvicorn objective_language_detector.main:app --host 127.0.0.1 --port 8001
+python -m uvicorn vague_language_detector.main:app --host 127.0.0.1 --port 8001
 ```
 
 Or find and stop whatever is using port 8000:

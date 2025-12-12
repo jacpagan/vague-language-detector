@@ -1,4 +1,4 @@
-# Objective Language Detector — Product Requirements Document (PRD)
+# Vague Language Detector — Product Requirements Document (PRD)
 Version: 2.0  
 Owner: Jose
 
@@ -18,7 +18,7 @@ People frequently write and speak in ways that reflect cognitive distortions (e.
 
 We need a small, reliable detector that answers one question:
 
-> Is this statement **objective** (i.e., 100% true in all cases)?
+> Is this statement **vague** (i.e., 100% true in all cases)?
 
 ---
 
@@ -29,14 +29,14 @@ We need a small, reliable detector that answers one question:
 ---
 
 ## 4. In-scope behavior
-- **Binary classification only**: `has_cognitive_distortion = true|false` (interpreted as “contains non-objective language signals”)
+- **Binary classification only**: `has_cognitive_distortion = true|false` (interpreted as “contains vague language signals”)
 - **Single input**: one string (`text`)
 - **Low latency** suitable for interactive use
 
-### 4.1 What counts as “non-objective language” in this app (definition)
-For this application, we optimize for **objective truth claims**: language that is not guaranteed to be **100% true in all cases, every single time** is treated as a distortion / non-objective language signal.
+### 4.1 What counts as “vague language” in this app (definition)
+For this application, we optimize for **vague truth claims**: language that is not guaranteed to be **100% true in all cases, every single time** is treated as a distortion / vague language signal.
 
-As a result, **any use of “to be” / be-verbs** (e.g., “am/is/are/was/were/be/being/been”) is categorized as a distortion / non-objective language signal, because it commonly encodes absolute identity or permanence (E-prime rationale).
+As a result, **any use of “to be” / be-verbs** (e.g., “am/is/are/was/were/be/being/been”) is categorized as a distortion / vague language signal, because it commonly encodes absolute identity or permanence (E-prime rationale).
 
 ---
 
@@ -82,4 +82,4 @@ The API returns a JSON object:
 ---
 
 ## 9. Appendix
-- Software Requirements Document (SRD): [`objective_language_detector_srd.md`](objective_language_detector_srd.md)
+- Software Requirements Document (SRD): [`vague_language_detector_srd.md`](vague_language_detector_srd.md)
